@@ -1,0 +1,49 @@
+/* basic elements */
+
+html {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+}
+
+/* fader */
+
+.slideshow {
+  position: relative;
+  margin: 10px auto;
+  padding: 0;
+  width: 980px;
+  height: 693px;
+  overflow: hidden;
+}
+
+/* navigation links */
+
+#next, #prev {
+  position: absolute;
+  bottom: 76px;
+  z-index: 99;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  padding: 20px;
+}
+#next {
+  right: 10px;
+}
+#prev {
+  left: 10px;
+}
+
+/* links on pages */
+
+.link {
+  position: absolute;
+  padding: 5px;
+  text-decoration: none;
+}
