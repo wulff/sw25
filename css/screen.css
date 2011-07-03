@@ -25,19 +25,30 @@ body {
 
 #next, #prev {
   position: absolute;
-  bottom: 76px;
+  width: 97px;
+  height: 77px;
+  bottom: 65px;
   z-index: 99;
   font-family: sans-serif;
   font-weight: bold;
   text-decoration: none;
   color: #fff;
-  padding: 20px;
 }
 #next {
   right: 10px;
+  background: transparent url(../img/next-off.png) no-repeat;
+}
+#next:hover {
+  right: 10px;
+  background: transparent url(../img/next-on.png) no-repeat;
 }
 #prev {
   left: 10px;
+  background: transparent url(../img/prev-off.png) no-repeat;
+}
+#prev:hover {
+  left: 11px;
+  background: transparent url(../img/prev-on.png) no-repeat;
 }
 
 /* links on pages */
