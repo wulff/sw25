@@ -1,29 +1,23 @@
 // attach the cycle plugin to the slideshow div
 $(function() {
+  var hash = document.location.hash;
+  var index = hash.replace(/\#(\d+)/, '$1');
+
+  index = index > 0 ? index - 1 : 0;
+
   $('#fade').cycle({
     prev: '#prev',
     next: '#next',
     timeout: 0,
-    before: onBefore
+    startingSlide: index,
+    after: onAfter
   });
-
-  $('#prev').hide();
 });
 
 // show and hide the prev/next links
-function onBefore() {
-  switch ($(this).attr('id')) {
-    case 'slide-1':
-      $('#prev').hide();
-      $('#next').show();
-      break;
-    case 'slide-2':
-      $('#prev').show();
-      $('#next').show();
-      break;
-    case 'slide-3':
-      $('#prev').show();
-      $('#next').hide();
-      break;
-  }
+function onAfter(curr, next, opts) {
+  var index = opts.currSlide;
+  $('#prev')[index == 0 ? 'fadeOut' : 'fadeIn']('fast');
+  $('#next')[index == opts.slideCount - 1 ? 'fadeOut' : 'fadeIn']('fast');
+  document.location.hash = '#'+ (index + 1);
 }

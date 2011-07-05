@@ -45,6 +45,7 @@ body {
 #prev {
   left: 10px;
   background: transparent url(../img/prev-off.png) no-repeat;
+  display: none;
 }
 #prev:hover {
   left: 11px;
